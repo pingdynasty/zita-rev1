@@ -140,8 +140,16 @@ class ZitaRev1Patch : public Patch {
 public:
   ZitaRev1Patch(){
     reverb = ZitaRev1StereoProcessor::create(getSampleRate());
+    registerParameter(PARAMETER_A, "RT60 Low");
+    registerParameter(PARAMETER_B, "RT60 Mid");
+    registerParameter(PARAMETER_C, "HF Damping");
     registerParameter(PARAMETER_D, "Mix");
-    // setParameterValue(PARAMETER_D, 0.5);
+    registerParameter(PARAMETER_AA, "Delay");
+    registerParameter(PARAMETER_AB, "Crossover Freq");
+    registerParameter(PARAMETER_AC, "EQ1 Freq");
+    registerParameter(PARAMETER_AD, "EQ1 Gain");
+    registerParameter(PARAMETER_AE, "EQ2 Freq");
+    registerParameter(PARAMETER_AF, "EQ2 Gain");
     setParameterValue(PARAMETER_AA, delay.getControl());
     setParameterValue(PARAMETER_AB, xover.getControl());
     setParameterValue(PARAMETER_AC, eq1fr.getControl());
